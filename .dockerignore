@@ -1,0 +1,20 @@
+# Build context: what the image does not need, it should not upload.
+.git
+.github
+.venv
+.venv/
+dist
+docs
+bench/_tmp
+data
+.pytest_cache
+.ruff_cache
+.hypothesis
+.coverage
+*.pyc
+__pycache__
+**/__pycache__
+.env
+index.pkl
+crawl.jsonl
+crawl.log

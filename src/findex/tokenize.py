@@ -12,6 +12,12 @@ Tokenization policy
   ``п'ять`` are one token each. Typographic apostrophes (U+2019, U+02BC) are
   first mapped to ASCII ``'`` so ``п’ять`` and ``п'ять`` are the same token.
   Leading/trailing apostrophes (quotes) are dropped.
+
+  Lab 8 measured that mapping: ``str.translate`` with a dict walks every
+  character through a Python-level table - 1 075 ms for a 5.4 MB book, 39% of
+  a serial index build. Three guarded ``str.replace`` calls do the same job in
+  12.7 ms (85x) because ``replace`` is a C two-way search that only copies when
+  the character is present.
 * **Hyphens:** a hyphen *inside* a word is kept (``well-known``, ``IT-фахівець``).
   Dashes surrounded by spaces and leading/trailing hyphens are separators.
 * **Case:** ``str.casefold()`` (``Straße`` == ``STRASSE``), not ``lower()``.
@@ -26,13 +32,16 @@ import re
 import unicodedata
 from collections.abc import Iterator
 
-_APOSTROPHES = str.maketrans({"’": "'", "ʼ": "'", "‘": "'"})
+_APOSTROPHES = ("\u2019", "\u02bc", "\u2018")
 
 _WORD = re.compile(r"[^\W_]+(?:['\-][^\W_]+)*")
 
 
 def tokenize(text: str) -> Iterator[str]:
     """Yield normalized word tokens from ``text`` lazily."""
-    text = unicodedata.normalize("NFC", text).casefold().translate(_APOSTROPHES)
+    text = unicodedata.normalize("NFC", text).casefold()
+    for apostrophe in _APOSTROPHES:
+        if apostrophe in text:
+            text = text.replace(apostrophe, "'")
     for match in _WORD.finditer(text):
         yield match.group()

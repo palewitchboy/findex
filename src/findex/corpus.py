@@ -21,7 +21,7 @@ import json
 import logging
 from collections.abc import Iterator
 from pathlib import Path
-from typing import NamedTuple
+from typing import NamedTuple, cast
 
 log = logging.getLogger(__name__)
 
@@ -37,13 +37,33 @@ class Document(NamedTuple):
 def _read_text_file(path: Path) -> str | None:
     """Read one file as UTF-8; fall back to ``errors="replace"``; None on I/O error."""
     try:
+        return read_document(path)
+    except OSError as exc:
+        log.warning("cannot read %s: %s", path, exc)
+        return None
+
+
+def read_document(path: Path) -> str:
+    """Read one document as UTF-8, raising ``OSError`` with the path attached.
+
+    This is the *strict* reader used by the parallel workers: a worker that
+    cannot read its file must fail the whole build loudly, not silently return
+    a smaller index. The streaming path wraps it in :func:`_read_text_file`,
+    which keeps Lab 1's "skip and warn" behaviour.
+    """
+    try:
         return path.read_text(encoding="utf-8")
     except UnicodeDecodeError:
         log.warning("bad UTF-8 in %s - re-reading with errors='replace'", path)
         return path.read_text(encoding="utf-8", errors="replace")
     except OSError as exc:
-        log.warning("cannot read %s: %s", path, exc)
-        return None
+        raise OSError(f"cannot read {path}: {exc}") from exc
+
+
+def load_document(path: Path, doc_id: int) -> Document | None:
+    """One document, or ``None`` if it cannot be read (logged, not raised)."""
+    text = _read_text_file(path)
+    return None if text is None else Document(doc_id, path, text)
 
 
 def _is_jsonl(path: Path) -> bool:
@@ -58,10 +78,10 @@ def _iter_txt_tree(root: Path) -> Iterator[Document]:
     for path in root.rglob("*.txt"):  # lazy generator over the tree
         if not path.is_file():
             continue
-        text = _read_text_file(path)
-        if text is None:
+        doc = load_document(path, doc_id)
+        if doc is None:
             continue
-        yield Document(doc_id, path, text)
+        yield doc
         doc_id += 1
 
 
@@ -78,7 +98,14 @@ def _iter_jsonl(path: Path, field: str = "text") -> Iterator[Document]:
             except json.JSONDecodeError:
                 log.warning("%s:%d is not valid JSON - skipped", path, lineno)
                 continue
-            text = record.get(field) if isinstance(record, dict) else None
+            # json.loads returns Any; isinstance() narrows it only to
+            # dict[Unknown, Unknown], so the cast supplies the key type.
+            row = (
+                cast("dict[str, object]", record)
+                if isinstance(record, dict)
+                else None
+            )
+            text = row.get(field) if row is not None else None
             if not isinstance(text, str):
                 log.warning(
                     "%s:%d has no string field %r - skipped", path, lineno, field

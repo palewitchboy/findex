@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}{% if q %}{{ q }} — {% endif %}findex{% endblock %}
+
+{% block content %}
+<form class="search" action="/" method="get" role="search">
+  <input
+    type="search" name="q" value="{{ q }}" placeholder="war AND peace, python, «a phrase»"
+    maxlength="200" autofocus aria-label="Пошуковий запит">
+  <select name="scorer" aria-label="Функція ранжування">
+    <option value="bm25" {% if scorer == "bm25" %}selected{% endif %}>BM25</option>
+    <option value="tfidf" {% if scorer == "tfidf" %}selected{% endif %}>TF-IDF</option>
+  </select>
+  <select name="k" aria-label="Результатів на сторінку">
+    {% for size in [10, 20, 50] %}
+    <option value="{{ size }}" {% if k == size %}selected{% endif %}>{{ size }}</option>
+    {% endfor %}
+  </select>
+  <button type="submit">Знайти</button>
+</form>
+
+{% if error %}
+  <p class="error">{{ error }}</p>
+{% endif %}
+
+{% if response %}
+  <p class="meta">
+    {{ response.total }} документ(ів) · {{ response.took_ms }} мс ·
+    {{ response.scorer }} · сторінка {{ response.page }} з {{ response.pages }}
+  </p>
+
+  {% if response.results %}
+  <ol class="hits">
+    {% for hit in response.results %}
+    <li>
+      <a class="title" href="/docs/{{ hit.doc_id }}?q={{ q|urlencode }}">{{ hit.title }}</a>
+      <span class="score">{{ "%.3f"|format(hit.score) }}</span>
+      <span class="docid">#{{ hit.doc_id }}</span>
+      <p class="snippet">{{ hit.snippet|highlight }}</p>
+    </li>
+    {% endfor %}
+  </ol>
+  {% else %}
+  <p class="meta">Нічого не знайдено. Спробуйте інший запит або скорер.</p>
+  {% endif %}
+
+  <nav class="pager">
+    {% if prev_url %}<a href="{{ prev_url }}">← попередня</a>{% else %}<span></span>{% endif %}
+    <span class="meta">сторінка {{ response.page }} / {{ response.pages }}</span>
+    {% if next_url %}<a href="{{ next_url }}">наступна →</a>{% else %}<span></span>{% endif %}
+  </nav>
+{% elif not q %}
+  <p class="meta">
+    Введіть запит. Синтаксис: <code>war AND peace</code>,
+    <code>war OR peace</code>, <code>war NOT treaty</code>, <code>"a phrase"</code>.
+  </p>
+{% endif %}
+{% endblock %}

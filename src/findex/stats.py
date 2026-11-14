@@ -8,8 +8,6 @@ that grows (it holds the answer); everything upstream is a stream.
 
 from __future__ import annotations
 
-import argparse
-import logging
 import time
 import tracemalloc
 from collections import Counter
@@ -71,36 +69,9 @@ def fmt_bytes(n: int) -> str:
     raise AssertionError("unreachable")
 
 
-def print_report(m: Measurement, title: str = "lazy (generators)") -> None:
-    s = m.result
-    print(f"== {title} ==")
-    print(f"documents  : {s.documents}")
-    print(f"tokens     : {s.tokens}")
-    print(f"vocabulary : {s.vocabulary}")
-    print(f"elapsed    : {m.elapsed:.2f} s")
-    print(f"peak memory: {fmt_bytes(m.peak_bytes)}")
-    print(f"\ntop {len(s.top)} terms:")
-    for rank, (term, count) in enumerate(s.top, start=1):
-        print(f"{rank:>3}. {term:<20} {count}")
+#: ``python -m findex.stats`` stays a thin shim over the typer app; the CLI
+#: owns printing, logging and exit codes (Lab 4).
+if __name__ == "__main__":  # pragma: no cover - see findex.cli
+    from findex.cli import stats_main
 
-
-def main(argv: list[str] | None = None) -> None:
-    parser = argparse.ArgumentParser(prog="python -m findex.stats", description=__doc__)
-    parser.add_argument(
-        "root", type=Path, help="directory of .txt files or a .jsonl file"
-    )
-    parser.add_argument(
-        "--limit", type=int, default=None, help="only the first N documents"
-    )
-    parser.add_argument(
-        "--top", type=int, default=50, help="how many top terms to print"
-    )
-    args = parser.parse_args(argv)
-
-    logging.basicConfig(level=logging.WARNING, format="%(levelname)s: %(message)s")
-    m = measure(lambda: lazy_stats(args.root, args.limit, args.top))
-    print_report(m)
-
-
-if __name__ == "__main__":
-    main()
+    stats_main()

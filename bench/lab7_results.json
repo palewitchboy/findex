@@ -1,0 +1,127 @@
+{
+  "machine": {
+    "cpu": "Intel64 Family 6 Model 63 Stepping 2, GenuineIntel",
+    "logical_cpus": 24,
+    "os": "Windows 10",
+    "python": "3.13.7",
+    "fastapi": "0.162.5",
+    "uvicorn": "0.54.0",
+    "oha": "oha 1.16.0"
+  },
+  "index": {
+    "documents": 48,
+    "terms": 143748,
+    "postings": 446575,
+    "tokens": 5797471,
+    "avg_doc_length": 120780.6,
+    "positions": false,
+    "storage": "arrays",
+    "format": "pickle",
+    "file_bytes": 10317380,
+    "build_seconds": 15.96,
+    "load_seconds": [
+      0.3492,
+      0.3769,
+      0.3645
+    ]
+  },
+  "core": {
+    "score_ms": 0.457,
+    "full_ms": 539.8,
+    "snippets_ms": 539.3,
+    "biggest_doc_mb": 5.64,
+    "biggest_read_ms": 216.9
+  },
+  "workload": {
+    "query": "love and death",
+    "k": 10,
+    "concurrency": 8,
+    "duration": "10s",
+    "warmup_requests": 40,
+    "text_cache": 32
+  },
+  "rows": [
+    {
+      "label": "1 worker · def · bm25",
+      "workers": 1,
+      "route": "/search",
+      "mode": "def",
+      "scorer": "bm25",
+      "url": "/search",
+      "requests": 185,
+      "ok": 185,
+      "rps": 19.29,
+      "p50_ms": 425.9,
+      "p95_ms": 493.5,
+      "p99_ms": 609.1,
+      "max_ms": 713.5,
+      "startup_s": 2.34
+    },
+    {
+      "label": "1 worker · def · tfidf",
+      "workers": 1,
+      "route": "/search",
+      "mode": "def",
+      "scorer": "tfidf",
+      "url": "/search",
+      "requests": 163,
+      "ok": 163,
+      "rps": 17.07,
+      "p50_ms": 434.8,
+      "p95_ms": 552.1,
+      "p99_ms": 1446.0,
+      "max_ms": 1446.1,
+      "startup_s": 2.28
+    },
+    {
+      "label": "1 worker · async def · bm25",
+      "workers": 1,
+      "route": "/search/async",
+      "mode": "async def",
+      "scorer": "bm25",
+      "url": "/search/async",
+      "requests": 185,
+      "ok": 185,
+      "rps": 19.27,
+      "p50_ms": 416.3,
+      "p95_ms": 544.5,
+      "p99_ms": 650.7,
+      "max_ms": 696.1,
+      "startup_s": 2.28
+    },
+    {
+      "label": "4 workers · def · bm25",
+      "workers": 4,
+      "route": "/search",
+      "mode": "def",
+      "scorer": "bm25",
+      "url": "/search",
+      "requests": 654,
+      "ok": 654,
+      "rps": 66.11,
+      "p50_ms": 121.0,
+      "p95_ms": 139.2,
+      "p99_ms": 162.8,
+      "max_ms": 180.0,
+      "startup_s": 2.79
+    }
+  ],
+  "interference": {
+    "def": {
+      "route": "/search",
+      "requests": 645,
+      "rps": 81.51,
+      "p50_ms": 110.5,
+      "p95_ms": 206.3,
+      "p99_ms": 222.8
+    },
+    "async def": {
+      "route": "/search/async",
+      "requests": 385,
+      "rps": 49.11,
+      "p50_ms": 175.2,
+      "p95_ms": 240.6,
+      "p99_ms": 263.7
+    }
+  }
+}

@@ -11,3 +11,18 @@ __pycache__/
 dist/
 build/
 .idea/
+
+# lab 2 artefacts: index files and benchmark scratch
+*.pkl
+bench/_tmp/
+bench/_run.log
+
+# lab 4: coverage data
+.coverage
+htmlcov/
+coverage.xml
+
+# lab 6: crawler output (a corpus and a per-URL log are run artefacts)
+crawl.jsonl
+corpus.jsonl
+crawl.log

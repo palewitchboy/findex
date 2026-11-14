@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}{{ status }} — findex{% endblock %}
+
+{% block content %}
+<h1 class="status">{{ status }}</h1>
+<p class="error">{{ detail }}</p>
+<p class="meta">
+  {% if status == 404 %}Такого документа немає в індексі.
+  {% elif status == 503 %}Індекс не завантажено — перевірте <code>INDEX_PATH</code> і <code>/health</code>.
+  {% else %}Спробуйте ще раз.{% endif %}
+</p>
+<p><a href="/">← на головну</a></p>
+{% endblock %}

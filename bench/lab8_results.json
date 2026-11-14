@@ -1,0 +1,474 @@
+{
+  "machine": {
+    "cpu": "Intel64 Family 6 Model 63 Stepping 2, GenuineIntel",
+    "logical_cpus": 24,
+    "os": "Windows 10",
+    "python": "3.13.7",
+    "numpy": "2.5.4"
+  },
+  "workload": {
+    "query": "love and death",
+    "k": 10,
+    "documents": 48
+  },
+  "index": {
+    "documents": 48,
+    "terms": 143748,
+    "postings": 446575,
+    "tokens": 5797471,
+    "avg_doc_length": 120780.6,
+    "file_bytes": 10317380,
+    "build_seconds": 11.1
+  },
+  "profiles": {
+    "search_snippets": {
+      "wall_ms": 625.643,
+      "top": [
+        {
+          "function": "lab8.py:711(search_with_snippets)",
+          "file": "lab8.py",
+          "calls": 1,
+          "tottime_ms": 0.051,
+          "cumtime_ms": 625.444
+        },
+        {
+          "function": "decorators.py:39(wrapper)",
+          "file": "decorators.py",
+          "calls": 1,
+          "tottime_ms": 0.026,
+          "cumtime_ms": 625.315
+        },
+        {
+          "function": "ranking.py:302(search)",
+          "file": "ranking.py",
+          "calls": 1,
+          "tottime_ms": 0.196,
+          "cumtime_ms": 625.281
+        },
+        {
+          "function": "snippet.py:379(snippet)",
+          "file": "snippet.py",
+          "calls": 10,
+          "tottime_ms": 3.813,
+          "cumtime_ms": 623.636
+        },
+        {
+          "function": "snippet.py:135(_load)",
+          "file": "snippet.py",
+          "calls": 10,
+          "tottime_ms": 57.055,
+          "cumtime_ms": 550.693
+        },
+        {
+          "function": "~:0(<method 'split' of 'str' objects>)",
+          "file": "~",
+          "calls": 20,
+          "tottime_ms": 246.125,
+          "cumtime_ms": 246.125
+        },
+        {
+          "function": "~:0(<method 'join' of 'str' objects>)",
+          "file": "~",
+          "calls": 30,
+          "tottime_ms": 166.368,
+          "cumtime_ms": 166.561
+        },
+        {
+          "function": "_local.py:539(read_text)",
+          "file": "_local.py",
+          "calls": 10,
+          "tottime_ms": 0.096,
+          "cumtime_ms": 80.875
+        },
+        {
+          "function": "_abc.py:628(read_text)",
+          "file": "_abc.py",
+          "calls": 10,
+          "tottime_ms": 0.126,
+          "cumtime_ms": 80.773
+        },
+        {
+          "function": "~:0(<method 'read' of '_io.TextIOWrapper' objects>)",
+          "file": "~",
+          "calls": 10,
+          "tottime_ms": 61.331,
+          "cumtime_ms": 77.543
+        },
+        {
+          "function": "snippet.py:335(_window)",
+          "file": "snippet.py",
+          "calls": 10,
+          "tottime_ms": 0.067,
+          "cumtime_ms": 67.582
+        },
+        {
+          "function": "snippet.py:316(_window_by_regex)",
+          "file": "snippet.py",
+          "calls": 10,
+          "tottime_ms": 59.081,
+          "cumtime_ms": 67.5
+        }
+      ]
+    },
+    "search_no_snippets": {
+      "wall_ms": 1.036,
+      "top": [
+        {
+          "function": "lab8.py:717(search_without)",
+          "file": "lab8.py",
+          "calls": 1,
+          "tottime_ms": 0.018,
+          "cumtime_ms": 0.936
+        },
+        {
+          "function": "decorators.py:39(wrapper)",
+          "file": "decorators.py",
+          "calls": 1,
+          "tottime_ms": 0.018,
+          "cumtime_ms": 0.845
+        },
+        {
+          "function": "ranking.py:302(search)",
+          "file": "ranking.py",
+          "calls": 1,
+          "tottime_ms": 0.04,
+          "cumtime_ms": 0.823
+        },
+        {
+          "function": "ranking.py:281(_top_k)",
+          "file": "ranking.py",
+          "calls": 1,
+          "tottime_ms": 0.008,
+          "cumtime_ms": 0.456
+        },
+        {
+          "function": "vector.py:158(bm25)",
+          "file": "vector.py",
+          "calls": 1,
+          "tottime_ms": 0.108,
+          "cumtime_ms": 0.296
+        },
+        {
+          "function": "ranking.py:246(_match_uncached)",
+          "file": "ranking.py",
+          "calls": 1,
+          "tottime_ms": 0.012,
+          "cumtime_ms": 0.285
+        },
+        {
+          "function": "vector.py:243(top_k_of)",
+          "file": "vector.py",
+          "calls": 1,
+          "tottime_ms": 0.01,
+          "cumtime_ms": 0.152
+        },
+        {
+          "function": "query.py:308(parse)",
+          "file": "query.py",
+          "calls": 1,
+          "tottime_ms": 0.008,
+          "cumtime_ms": 0.148
+        },
+        {
+          "function": "vector.py:208(top_k)",
+          "file": "vector.py",
+          "calls": 1,
+          "tottime_ms": 0.071,
+          "cumtime_ms": 0.135
+        },
+        {
+          "function": "query.py:155(evaluate)",
+          "file": "query.py",
+          "calls": 1,
+          "tottime_ms": 0.009,
+          "cumtime_ms": 0.113
+        },
+        {
+          "function": "query.py:92(evaluate)",
+          "file": "query.py",
+          "calls": 3,
+          "tottime_ms": 0.045,
+          "cumtime_ms": 0.104
+        },
+        {
+          "function": "vector.py:117(normalisation)",
+          "file": "vector.py",
+          "calls": 1,
+          "tottime_ms": 0.048,
+          "cumtime_ms": 0.09
+        }
+      ]
+    },
+    "build_index": {
+      "wall_ms": 17717.917,
+      "top": [
+        {
+          "function": "lab8.py:724(<lambda>)",
+          "file": "lab8.py",
+          "calls": 1,
+          "tottime_ms": 0.01,
+          "cumtime_ms": 17693.226
+        },
+        {
+          "function": "decorators.py:39(wrapper)",
+          "file": "decorators.py",
+          "calls": 1,
+          "tottime_ms": 0.034,
+          "cumtime_ms": 17693.17
+        },
+        {
+          "function": "index.py:749(build_index)",
+          "file": "index.py",
+          "calls": 1,
+          "tottime_ms": 5.029,
+          "cumtime_ms": 17693.129
+        },
+        {
+          "function": "index.py:654(_build_serial)",
+          "file": "index.py",
+          "calls": 1,
+          "tottime_ms": 6847.824,
+          "cumtime_ms": 17688.091
+        },
+        {
+          "function": "tokenize.py:40(tokenize)",
+          "file": "tokenize.py",
+          "calls": 5797519,
+          "tottime_ms": 7017.505,
+          "cumtime_ms": 9784.521
+        },
+        {
+          "function": "~:0(<method 'group' of 're.Match' objects>)",
+          "file": "~",
+          "calls": 5797519,
+          "tottime_ms": 2035.24,
+          "cumtime_ms": 2035.24
+        },
+        {
+          "function": "~:0(<method 'casefold' of 'str' objects>)",
+          "file": "~",
+          "calls": 48,
+          "tottime_ms": 500.527,
+          "cumtime_ms": 500.527
+        },
+        {
+          "function": "~:0(<method 'get' of 'dict' objects>)",
+          "file": "~",
+          "calls": 446575,
+          "tottime_ms": 356.8,
+          "cumtime_ms": 356.8
+        },
+        {
+          "function": "~:0(<method 'append' of 'array.array' objects>)",
+          "file": "~",
+          "calls": 893150,
+          "tottime_ms": 331.127,
+          "cumtime_ms": 331.127
+        },
+        {
+          "function": "index.py:671(<genexpr>)",
+          "file": "index.py",
+          "calls": 49,
+          "tottime_ms": 9.425,
+          "cumtime_ms": 234.197
+        },
+        {
+          "function": "corpus.py:63(load_document)",
+          "file": "corpus.py",
+          "calls": 48,
+          "tottime_ms": 0.391,
+          "cumtime_ms": 224.773
+        },
+        {
+          "function": "corpus.py:37(_read_text_file)",
+          "file": "corpus.py",
+          "calls": 48,
+          "tottime_ms": 0.109,
+          "cumtime_ms": 224.187
+        }
+      ]
+    }
+  },
+  "flame": {
+    "before": {
+      "file": "docs/figures/lab8_flame.svg",
+      "samples": 15303,
+      "stacks": 5,
+      "depth": 10
+    },
+    "after": {
+      "file": "docs/figures/lab8_flame_after.svg",
+      "samples": 7015,
+      "stacks": 8,
+      "depth": 10
+    },
+    "sampler": "in-process sampling thread over sys._current_frames(), unthrottled (~15 000 samples/s; a 1 ms timer is a 31 ms timer on Windows)",
+    "pyspy": "py-spy 0.4.3 fails on this Windows host: 'Failed to find python version from target process' when attaching with --pid, and 'Failed to get process executable name ... (os error 31)' when spawning. The flame graphs here come from an in-process sampling thread instead (sys._current_frames, 1 ms interval) rendered to SVG by render_flame_svg()."
+  },
+  "snippets": {
+    "documents": 10,
+    "steady_ms": 8.314,
+    "cold_ms": 641.488,
+    "warmup_ms": 235.647,
+    "legacy_steady_ms": 50.982,
+    "legacy_cold_ms": 632.985,
+    "legacy_warmup_ms": 55.404,
+    "steady_speedup": 6.1,
+    "cold_ratio": 1.01,
+    "full_ms": 8.653,
+    "legacy_full_ms": 49.554,
+    "full_speedup": 5.7,
+    "identity": {
+      "queries": 50,
+      "snippets": 471,
+      "mismatches": 0
+    },
+    "cache_maxsize": 48
+  },
+  "scoring": {
+    "rows": [
+      {
+        "query": "love and death",
+        "label": "3 terms, all common",
+        "docs": 41,
+        "python_ms": 0.266,
+        "numpy_ms": 0.133,
+        "speedup": 2.0,
+        "identical": true
+      },
+      {
+        "query": "the",
+        "label": "1 term, df = 48",
+        "docs": 48,
+        "python_ms": 0.133,
+        "numpy_ms": 0.095,
+        "speedup": 1.4,
+        "identical": true
+      },
+      {
+        "query": "love",
+        "label": "1 term, df = 42",
+        "docs": 42,
+        "python_ms": 0.121,
+        "numpy_ms": 0.111,
+        "speedup": 1.09,
+        "identical": true
+      },
+      {
+        "query": "treasure",
+        "label": "1 term, df = 28",
+        "docs": 28,
+        "python_ms": 0.09,
+        "numpy_ms": 0.095,
+        "speedup": 0.95,
+        "identical": true
+      },
+      {
+        "query": "buffalo",
+        "label": "1 term, df = 9",
+        "docs": 9,
+        "python_ms": 0.039,
+        "numpy_ms": 0.068,
+        "speedup": 0.57,
+        "identical": true
+      },
+      {
+        "query": "zzzznotaterm",
+        "label": "1 term, df = 0",
+        "docs": 0,
+        "python_ms": 0.004,
+        "numpy_ms": 0.004,
+        "speedup": 1.0,
+        "identical": true
+      },
+      {
+        "query": "war and peace",
+        "label": "3 terms, df = 38",
+        "docs": 38,
+        "python_ms": 0.254,
+        "numpy_ms": 0.132,
+        "speedup": 1.92,
+        "identical": true
+      }
+    ],
+    "identical": true
+  },
+  "scaling": {
+    "rows": [
+      {
+        "df": 48,
+        "python_ms": 0.024,
+        "numpy_ms": 0.066,
+        "speedup": 0.36,
+        "python_ns_per_posting": 495.8,
+        "numpy_ns_per_posting": 1383.3
+      },
+      {
+        "df": 480,
+        "python_ms": 0.239,
+        "numpy_ms": 0.089,
+        "speedup": 2.69,
+        "python_ns_per_posting": 498.5,
+        "numpy_ns_per_posting": 185.0
+      },
+      {
+        "df": 4800,
+        "python_ms": 2.567,
+        "numpy_ms": 0.229,
+        "speedup": 11.2,
+        "python_ns_per_posting": 534.9,
+        "numpy_ns_per_posting": 47.8
+      },
+      {
+        "df": 48000,
+        "python_ms": 29.14,
+        "numpy_ms": 1.145,
+        "speedup": 25.45,
+        "python_ns_per_posting": 607.1,
+        "numpy_ns_per_posting": 23.9
+      }
+    ],
+    "documents": 100000
+  },
+  "build": {
+    "legacy_seconds": 17.5,
+    "shipped_seconds": 11.49,
+    "speedup": 1.52,
+    "identical": true,
+    "tokens": 5797471,
+    "seconds_per_million_tokens_legacy": 3.02,
+    "seconds_per_million_tokens_shipped": 1.98
+  },
+  "benchmark": {
+    "rows": [
+      {
+        "name": "search_with_snippets",
+        "min_ms": 0.424,
+        "median_ms": 0.482,
+        "rounds": 110
+      },
+      {
+        "name": "search_without_snippets",
+        "min_ms": 0.086,
+        "median_ms": 0.101,
+        "rounds": 3081
+      },
+      {
+        "name": "build_index",
+        "min_ms": 10.309,
+        "median_ms": 11.648,
+        "rounds": 81
+      }
+    ],
+    "seconds": 6.4,
+    "tests": 414
+  },
+  "positions": {
+    "without_bytes": 10317380,
+    "with_bytes": 37129652,
+    "ratio": 3.599,
+    "build_seconds_without": 11.1,
+    "build_seconds_with": 15.8
+  },
+  "pytest_benchmark": "5.3.1"
+}

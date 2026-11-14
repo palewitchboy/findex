@@ -1,0 +1,68 @@
+{
+  "generated_at": "2026-11-12T14:44:41+0200",
+  "machine": {
+    "cpu": "Intel(R) Xeon(R) CPU E5-2670 v3 @ 2.30GHz",
+    "physical_cores": null,
+    "logical_cores": 24,
+    "ram_bytes": null,
+    "os": "Windows 10",
+    "python": "3.13.18",
+    "gil_enabled": false
+  },
+  "subset": {
+    "docs": 48,
+    "megabytes": 8.399848
+  },
+  "runs": 3,
+  "row": {
+    "executor": "threads",
+    "workers": 8,
+    "wall": 1.9351244999998016,
+    "wall_min": 1.8627995000006194,
+    "wall_max": 2.024195600000894,
+    "cpu": 6.625,
+    "cpu_parent": 6.625,
+    "rss": 161972224.0,
+    "merge": 0.8050350000012259,
+    "terms": 85522.0,
+    "postings": 231533.0,
+    "tokens": 1432090.0,
+    "runs": 3,
+    "serial_wall": 4.889733300000444,
+    "speedup": 2.526831374415933
+  },
+  "serial": {
+    "executor": "serial",
+    "workers": 1,
+    "wall": 4.889733300000444,
+    "wall_min": 4.826364799999283,
+    "wall_max": 4.9026796000016475,
+    "cpu": 4.890625,
+    "cpu_parent": 4.890625,
+    "rss": 194527232.0,
+    "merge": 0.754713599999377,
+    "terms": 85522.0,
+    "postings": 231533.0,
+    "tokens": 1432090.0,
+    "runs": 3
+  },
+  "cpu_source": "time.process_time (parent only)",
+  "processes_check": {
+    "works": true,
+    "executor": "processes",
+    "workers": 4,
+    "wall": 2.5989230000013777,
+    "speedup": 1.8354439512051612,
+    "runs": 1,
+    "cpu_source": "time.process_time (parent only)",
+    "note": "spawn works under 3.13t; psutil/matplotlib have no free-threaded wheels"
+  },
+  "identity": {
+    "python": "3.13.18",
+    "gil_enabled": false,
+    "identical": true,
+    "terms": 85522,
+    "postings": 231533,
+    "tokens": 1432090
+  }
+}

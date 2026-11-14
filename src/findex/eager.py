@@ -10,7 +10,6 @@ Never use it for real work - it exists only to be measured against the lazy one.
 from __future__ import annotations
 
 import argparse
-import logging
 from collections import Counter
 from pathlib import Path
 
@@ -55,8 +54,8 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument("--limit", type=int, default=None)
     args = parser.parse_args(argv)
 
-    logging.basicConfig(level=logging.WARNING, format="%(levelname)s: %(message)s")
-
+    # No logging configuration here: Lab 4 moved that to findex.cli, and this
+    # experiment only prints its comparison table.
     eager = measure(lambda: eager_stats(args.root, args.limit))
     lazy = measure(lambda: lazy_stats(args.root, args.limit))
 

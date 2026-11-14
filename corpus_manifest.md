@@ -16,10 +16,12 @@
 | pg113.txt | The Secret Garden | 475 |
 | pg115.txt | United States Census Figures Back to 1630 | 2066 |
 | pg117.txt | Symphony No. 5 in C minor Opus 67 | 20 |
+| pg118.txt | Big Dummy's Guide to the Internet | 423 |
 | pg119.txt | A Tramp Abroad | 922 |
 | pg120.txt | Treasure Island | 399 |
 | pg121.txt | Northanger Abbey | 468 |
 | pg122.txt | The Return of the Native | 838 |
+| pg123.txt | At the Earth's Core | 296 |
 | pg124.txt | Deuterocanonical Books of the Bible | 835 |
 | pg125.txt | A Girl of the Limberlost | 698 |
 | pg126.txt | The Poison Belt | 187 |
@@ -34,19 +36,50 @@
 | pg136.txt | A Child's Garden of Verses | 74 |
 | pg137.txt | Sara Crewe; Or, What Happened at Miss Minchin's Boarding School | 112 |
 | pg138.txt | George Sand: Some Aspects of Her Life and Writings | 413 |
+| pg139.txt | The Lost World | 451 |
+| pg140.txt | The Jungle | 854 |
 | pg141.txt | Mansfield Park | 929 |
+| pg142.txt | The $30,000 Bequest, and Other Stories | 556 |
 | pg143.txt | The Mayor of Casterbridge | 700 |
 | pg144.txt | The Voyage Out | 817 |
 | pg145.txt | Middlemarch | 1865 |
 | pg146.txt | A Little Princess | 391 |
 | pg147.txt | Common Sense | 148 |
 | pg148.txt | The Autobiography of Benjamin Franklin | 404 |
+| pg149.txt | The Lost Continent | 235 |
+| pg150.txt | The Republic | 715 |
+| pg151.txt | The Rime of the Ancient Mariner | 44 |
 | pg152.txt | Wild Justice | 374 |
 | pg153.txt | Jude the Obscure | 858 |
+| pg154.txt | The Rise of Silas Lapham | 734 |
+| pg155.txt | The Moonstone | 1135 |
 | pg156.txt | Symphony No. 5 in C minor, Opus 67 | 20 |
+| pg157.txt | Daddy-Long-Legs | 240 |
+| pg158.txt | Emma | 933 |
+| pg159.txt | The island of Doctor Moreau | 269 |
+| pg160.txt | The Awakening, and Selected Short Stories | 392 |
+| pg161.txt | Sense and Sensibility | 712 |
+| pg162.txt | Take Me for a Ride: Coming of Age in a Destructive Cult | 398 |
+| pg163.txt | Flower Fables | 212 |
+| pg164.txt | Twenty Thousand Leagues under the Sea | 638 |
+| pg165.txt | McTeague: A Story of San Francisco | 680 |
+| pg166.txt | Summer | 343 |
+| pg167.txt | American Hand Book of the Daguerreotype | 276 |
+| pg168.txt | The History and Practice of the Art of Photography | 239 |
+| pg169.txt | The Well at the World's End: A Tale | 1202 |
+| pg170.txt | The Haunted Hotel: A Mystery of Modern Venice | 385 |
+| pg171.txt | Charlotte Temple | 236 |
+| pg172.txt | The Haunted Bookshop | 375 |
+| pg173.txt | The Insidious Dr. Fu Manchu | 445 |
+| pg174.txt | The Picture of Dorian Gray | 465 |
 | pg175.txt | The Phantom of the Opera | 504 |
 | pg176.txt | Roderick Hudson | 786 |
+| pg177.txt | The American | 794 |
+| pg178.txt | Confidence | 458 |
+| pg179.txt | The Europeans | 371 |
 | pg180.txt | The 1994 CIA World Factbook | 2827 |
+| pg181.txt | The Project Gutenberg RST Manual | 58 |
+| pg200.txt | The Project Gutenberg Encyclopedia, Volume 1 of 28 | 8312 |
 | pg201.txt | Flatland: A Romance of Many Dimensions | 227 |
 | pg202.txt | My Bondage and My Freedom | 798 |
 | pg203.txt | Uncle Tom's Cabin | 1079 |
@@ -62,6 +95,7 @@
 | pg213.txt | The Man from Snowy River | 162 |
 | pg214.txt | In the Days When the World Was Wide, and Other Verses | 182 |
 | pg215.txt | The call of the wild | 199 |
+| pg216.txt | The Tao Teh King, or the Tao and its Characteristics | 80 |
 | pg217.txt | Sons and Lovers | 954 |
 | pg218.txt | C. Iuli Caesaris De Bello Gallico, I-IV | 169 |
 | pg219.txt | Heart of Darkness | 237 |
@@ -79,24 +113,10 @@
 | pg231.txt | Georgicon | 124 |
 | pg232.txt | The Georgics | 145 |
 | pg233.txt | Sister Carrie: A Novel | 942 |
+| pg234.txt | Child Christopher and Goldilind the Fair | 278 |
 | pg235.txt | William Gibson Interviewed | 35 |
 | pg236.txt | The Jungle Book | 303 |
 | pg237.txt | Sexti Properti Elegiarvm: Liber Primvs | 52 |
 | pg238.txt | Dear Enemy | 396 |
 | pg240.txt | Stories from the Old Attic | 182 |
 | pg241.txt | Clotelle; Or, The Colored Heroine, a tale of the Southern States; Or, The President's Daughter | 284 |
-| pg243.txt | The forged coupon, and other stories | 352 |
-| pg246.txt | The Rubaiyat of Omar Khayyam | 90 |
-| pg249.txt | French Cave Paintings | 32 |
-| pg250.txt | A Brief History of the Internet | 118 |
-| pg252.txt | Copyright Law of the United States of America | 218 |
-| pg253.txt | The Universal Copyright Convention (1988) | 71 |
-| pg258.txt | Poems by Adam Lindsay Gordon | 406 |
-| pg260.txt | An Introduction to the Study of Robert Browning's Poetry | 715 |
-| pg262.txt | The Collected Poems of Rupert Brooke | 176 |
-| pg267.txt | The Touchstone | 177 |
-| pg269.txt | Beasts and Super-Beasts | 392 |
-| pg274.txt | Disputation of Doctor Martin Luther on the Power and Efficacy of Indulgences | 50 |
-| pg275.txt | The Augsburg Confession | 104 |
-| pg277.txt | Trinity Site | 48 |
-| pg287.txt | Remember the Alamo | 487 |

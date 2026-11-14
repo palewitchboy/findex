@@ -1,0 +1,10 @@
+{
+  "n": 1000000,
+  "plain_b_per_object": 128.4,
+  "slots_b_per_object": 88.4,
+  "array_pair_bytes": 8,
+  "plain_header": 48,
+  "plain_dict": 88,
+  "slots_header": 48,
+  "list_pointer": 28
+}

@@ -1,0 +1,45 @@
+# Render blueprint for findex (lab 7). NOT DEPLOYED - see the README.
+#
+# What a deployment needs, in one file:
+#   * a Docker build from this repository (the render runtime reads the
+#     Dockerfile and ignores buildCommand/startCommand);
+#   * /health as the platform's health check - it answers 503 while the index is
+#     not loaded, which is exactly when Render should hold traffic back;
+#   * configuration from the environment, never from code (12-factor, rule III),
+#     so the same image runs locally, in CI and here.
+#
+# The index itself is the one thing this file cannot give you: `data/` is 72 MB
+# and a pickled index of all 120 books is ~25 MB, so it does not belong in git.
+# Two honest options:
+#
+#   1. Bake it into the image (works on Render's free plan):
+#        COPY bench/_tmp/lab7/index.pkl /data/index.pkl
+#      ... and keep INDEX_PATH=/data/index.pkl.
+#   2. Mount a disk (paid plans). Uncomment the `disk:` block below; the first
+#      boot then has no index -> /health answers 503 until you copy one in with
+#      `render ssh` or a one-off job.
+
+services:
+  - type: web
+    name: findex
+    runtime: docker
+    plan: free
+    region: frankfurt
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: INDEX_PATH
+        value: /data/index.pkl
+      - key: LOG_LEVEL
+        value: INFO
+      - key: MAX_K
+        value: "100"
+      - key: PAGE_SIZE
+        value: "10"
+      - key: PORT
+        value: "8000"
+    # disk:
+    #   name: findex-index
+    #   mountPath: /data
+    #   sizeGB: 1

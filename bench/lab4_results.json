@@ -1,0 +1,73 @@
+{
+  "generated_at": "2026-11-12T14:16:08+0200",
+  "platform": "win32",
+  "corpus_docs": 6,
+  "corpus_bytes": 205175,
+  "warm_runs": 5,
+  "commands": {
+    "startup (--version)": {
+      "cold_ms": 635.7,
+      "warm_median_ms": 634.6,
+      "warm_min_ms": 631.6,
+      "warm_max_ms": 644.0
+    },
+    "index": {
+      "cold_ms": 1534.8,
+      "warm_median_ms": 1479.5,
+      "warm_min_ms": 1401.4,
+      "warm_max_ms": 1499.0
+    },
+    "search --json": {
+      "cold_ms": 904.9,
+      "warm_median_ms": 878.6,
+      "warm_min_ms": 861.8,
+      "warm_max_ms": 904.8
+    },
+    "search (human)": {
+      "cold_ms": 933.8,
+      "warm_median_ms": 901.1,
+      "warm_min_ms": 881.8,
+      "warm_max_ms": 921.6
+    },
+    "stats": {
+      "cold_ms": 1215.2,
+      "warm_median_ms": 1213.7,
+      "warm_min_ms": 1200.4,
+      "warm_max_ms": 1215.4
+    }
+  },
+  "output_bytes": {
+    "json": 1403,
+    "human": 2736
+  },
+  "packaging": {
+    "wheel": "findex-0.4.0-py3-none-any.whl",
+    "wheel_bytes": 53937,
+    "sdist": "findex-0.4.0.tar.gz",
+    "sdist_bytes": 80348
+  },
+  "health": {
+    "tests": 238,
+    "tests_fast": 237,
+    "coverage_percent": 95.1,
+    "coverage_by_module": {
+      "__init__.py": 100.0,
+      "__main__.py": 0.0,
+      "cli.py": 100.0,
+      "corpus.py": 91.5,
+      "decorators.py": 100.0,
+      "eager.py": 72.1,
+      "index.py": 93.5,
+      "query.py": 94.3,
+      "ranking.py": 95.8,
+      "search.py": 98.8,
+      "snippet.py": 95.2,
+      "stats.py": 96.2,
+      "store.py": 92.2,
+      "tokenize.py": 100.0
+    },
+    "pyright_errors": 0,
+    "type_ignore_comments": 0,
+    "python": "3.13.7"
+  }
+}

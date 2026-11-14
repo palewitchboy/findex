@@ -1,0 +1,110 @@
+{
+  "corpus": "data",
+  "limit": null,
+  "docs": 120,
+  "tokens": 12524563,
+  "terms": 278669,
+  "postings": 1038436,
+  "memory_study": [
+    {
+      "variant": "plain",
+      "terms": 278669,
+      "postings": 1038436,
+      "docs": 120,
+      "build_s": 204.43,
+      "peak_mb": 211.7,
+      "file_mb": 26.1,
+      "save_s": 5.56,
+      "load_s": 2.05
+    },
+    {
+      "variant": "slots",
+      "terms": 278669,
+      "postings": 1038436,
+      "docs": 120,
+      "build_s": 196.93,
+      "peak_mb": 186.1,
+      "file_mb": 22.1,
+      "save_s": 9.01,
+      "load_s": 5.28
+    },
+    {
+      "variant": "arrays",
+      "terms": 278669,
+      "postings": 1038436,
+      "docs": 120,
+      "build_s": 183.8,
+      "peak_mb": 156.8,
+      "file_mb": 19.6,
+      "save_s": 3.79,
+      "load_s": 0.79
+    }
+  ],
+  "formats": [
+    {
+      "format": "pickle",
+      "file_mb": 22.1,
+      "save_s": 6.27,
+      "load_s": 6.4
+    },
+    {
+      "format": "json",
+      "file_mb": 11.3,
+      "save_s": 6.4,
+      "load_s": 3.79
+    }
+  ],
+  "engines": [
+    {
+      "engine": "merge",
+      "query": "the project",
+      "hits": 120,
+      "median_ms": 0.045,
+      "best_ms": 0.04,
+      "df": [
+        120,
+        120
+      ]
+    },
+    {
+      "engine": "set",
+      "query": "the project",
+      "hits": 120,
+      "median_ms": 0.038,
+      "best_ms": 0.04,
+      "df": [
+        120,
+        120
+      ]
+    },
+    {
+      "engine": "merge",
+      "query": "cymbeline lucrece",
+      "hits": 1,
+      "median_ms": 0.008,
+      "best_ms": 0.01,
+      "df": [
+        1,
+        1
+      ]
+    },
+    {
+      "engine": "set",
+      "query": "cymbeline lucrece",
+      "hits": 1,
+      "median_ms": 0.013,
+      "best_ms": 0.01,
+      "df": [
+        1,
+        1
+      ]
+    }
+  ],
+  "positions": {
+    "limit": 20,
+    "peak_off_mb": 82.1,
+    "peak_on_mb": 167.9,
+    "file_off_mb": 5.5,
+    "file_on_mb": 18.1
+  }
+}

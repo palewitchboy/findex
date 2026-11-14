@@ -1,0 +1,287 @@
+{
+  "machine": {
+    "system": "Windows",
+    "release": "10",
+    "processor": "Intel64 Family 6 Model 154 Stepping 3, GenuineIntel",
+    "cpu_count": 12,
+    "python": "3.13.9"
+  },
+  "corpus": {
+    "root": "data",
+    "documents": 120,
+    "bytes": 74683017,
+    "largest": {
+      "name": "pg200.txt",
+      "bytes": 8312680
+    }
+  },
+  "lazy": {
+    "documents": 120,
+    "tokens": 12524563,
+    "vocabulary": 278669,
+    "elapsed_s": 48.51607190002687,
+    "peak_bytes": 143898242,
+    "runs": 3,
+    "elapsed_all": [
+      30.177100299857557,
+      48.51607190002687,
+      48.57070769998245
+    ],
+    "peak_all": [
+      143902765,
+      143898242,
+      143898221
+    ]
+  },
+  "eager": {
+    "documents": 120,
+    "tokens": 12524563,
+    "vocabulary": 278669,
+    "elapsed_s": 47.042046200018376,
+    "peak_bytes": 805248534,
+    "runs": 3,
+    "elapsed_all": [
+      36.834669600008056,
+      47.88728639995679,
+      47.042046200018376
+    ],
+    "peak_all": [
+      805252476,
+      805245656,
+      805248534
+    ]
+  },
+  "single": {
+    "name": "pg200.txt",
+    "bytes": 8312680,
+    "tokens": 1346412,
+    "vocabulary": 72983,
+    "elapsed_s": 4.825393700040877,
+    "peak_bytes": 130655099,
+    "documents": 1,
+    "stages": {
+      "chars": 8165648,
+      "bytes_per_char": 2,
+      "read_peak_bytes": 41576436,
+      "casefold_peak_bytes": 130651786,
+      "ascii_casefold_peak_bytes": 38171015,
+      "folded_chars": 8165648,
+      "count_peak_bytes": 130652210,
+      "terms": 72983,
+      "tokens": 1346412
+    }
+  },
+  "ratio": 5.595958107674449,
+  "top": [
+    [
+      "the",
+      678980
+    ],
+    [
+      "and",
+      381665
+    ],
+    [
+      "of",
+      370100
+    ],
+    [
+      "to",
+      303924
+    ],
+    [
+      "a",
+      251533
+    ],
+    [
+      "in",
+      207364
+    ],
+    [
+      "i",
+      164010
+    ],
+    [
+      "he",
+      142277
+    ],
+    [
+      "that",
+      137077
+    ],
+    [
+      "was",
+      134979
+    ],
+    [
+      "it",
+      127114
+    ],
+    [
+      "you",
+      106440
+    ],
+    [
+      "his",
+      101976
+    ],
+    [
+      "with",
+      98822
+    ],
+    [
+      "is",
+      90536
+    ],
+    [
+      "for",
+      88970
+    ],
+    [
+      "her",
+      85168
+    ],
+    [
+      "as",
+      85038
+    ],
+    [
+      "had",
+      81551
+    ],
+    [
+      "not",
+      76907
+    ],
+    [
+      "she",
+      76526
+    ],
+    [
+      "but",
+      68571
+    ],
+    [
+      "at",
+      68567
+    ],
+    [
+      "on",
+      67421
+    ],
+    [
+      "be",
+      67004
+    ],
+    [
+      "by",
+      59741
+    ],
+    [
+      "0",
+      57777
+    ],
+    [
+      "this",
+      57120
+    ],
+    [
+      "have",
+      55878
+    ],
+    [
+      "him",
+      53036
+    ],
+    [
+      "my",
+      52325
+    ],
+    [
+      "which",
+      51690
+    ],
+    [
+      "from",
+      47887
+    ],
+    [
+      "they",
+      46472
+    ],
+    [
+      "all",
+      45472
+    ],
+    [
+      "me",
+      45190
+    ],
+    [
+      "or",
+      44207
+    ],
+    [
+      "said",
+      43264
+    ],
+    [
+      "1",
+      43080
+    ],
+    [
+      "are",
+      39346
+    ],
+    [
+      "so",
+      39028
+    ],
+    [
+      "were",
+      38360
+    ],
+    [
+      "an",
+      35466
+    ],
+    [
+      "no",
+      35455
+    ],
+    [
+      "one",
+      35282
+    ],
+    [
+      "there",
+      34705
+    ],
+    [
+      "if",
+      34433
+    ],
+    [
+      "what",
+      32483
+    ],
+    [
+      "we",
+      31342
+    ],
+    [
+      "when",
+      30688
+    ]
+  ],
+  "method": {
+    "measure": "tracemalloc peak around the whole run, perf_counter wall clock",
+    "lazy": "findex.stats.lazy_stats",
+    "eager": "findex.eager.eager_stats",
+    "single": "lazy_stats over a one-file corpus copied to bench/_tmp/lab1",
+    "runs": 3,
+    "median": "median of --runs traced runs; the peak is identical across runs",
+    "tokens_per_second": 258152.9,
+    "generated_at": "2026-11-14T21:20:27"
+  }
+}

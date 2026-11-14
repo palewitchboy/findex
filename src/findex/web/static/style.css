@@ -1,0 +1,219 @@
+/* findex — lab 7. One stylesheet, no framework, no build step.
+   System fonts: the page renders like the reader's own tools, loads nothing. */
+
+:root {
+  --bg: #fbfaf8;
+  --fg: #1c1b19;
+  --muted: #6b6862;
+  --line: #e2ded6;
+  --accent: #8a3b12;
+  --mark: #ffe9a8;
+  --radius: 6px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #171614;
+    --fg: #ece8e1;
+    --muted: #a09b92;
+    --line: #302d29;
+    --accent: #f0a875;
+    --mark: #6b4a00;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: 16px/1.6 ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  width: 100%;
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 4rem;
+  flex: 1;
+}
+
+.top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 0;
+}
+
+.brand {
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.top nav a {
+  margin-left: 1rem;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.top nav a:hover { color: var(--accent); }
+
+footer {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.8rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* ---------------------------------------------------------------- the form */
+.search {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1.5rem 0 1rem;
+}
+
+.search input[type="search"] {
+  flex: 1;
+  min-width: 0;
+  padding: 0.6rem 0.75rem;
+  font-size: 1rem;
+  color: var(--fg);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.search input[type="search"]:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: -1px;
+  border-color: transparent;
+}
+
+.search select,
+.search button {
+  padding: 0.6rem 0.7rem;
+  font-size: 0.9rem;
+  color: var(--fg);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.search button {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  font-weight: 600;
+}
+
+/* ---------------------------------------------------------------- results */
+.meta {
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.error { color: #b3261e; font-weight: 600; }
+
+.hits {
+  list-style: none;
+  margin: 1rem 0 1.5rem;
+  padding: 0;
+}
+
+.hits li {
+  padding: 0.9rem 0 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.hits .title {
+  color: var(--fg);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.hits .title:hover { color: var(--accent); text-decoration: underline; }
+
+.hits .score {
+  margin-left: 0.5rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.hits .docid {
+  margin-left: 0.35rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.snippet {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.925rem;
+  overflow-wrap: anywhere;
+}
+
+mark {
+  background: var(--mark);
+  color: inherit;
+  border-radius: 2px;
+  padding: 0 1px;
+}
+
+/* ---------------------------------------------------------------- pager */
+.pager {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.pager a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.pager a:hover { text-decoration: underline; }
+
+/* ---------------------------------------------------------------- document */
+main a { color: var(--accent); }
+
+.crumbs { margin-bottom: 0.5rem; }
+.crumbs a { text-decoration: none; font-size: 0.9rem; }
+.crumbs a:hover { text-decoration: underline; }
+
+h1 { font-size: 1.6rem; line-height: 1.25; letter-spacing: -0.01em; }
+
+.doc {
+  margin-top: 1.5rem;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font-family: ui-serif, Georgia, "Times New Roman", serif;
+  font-size: 1rem;
+  border-top: 1px solid var(--line);
+  padding-top: 1.25rem;
+}
+
+.status { font-size: 3rem; margin: 2rem 0 0; color: var(--accent); }
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.85em;
+  background: color-mix(in srgb, var(--fg) 7%, transparent);
+  padding: 0.1em 0.3em;
+  border-radius: 3px;
+}
